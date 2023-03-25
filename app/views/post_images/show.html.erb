@@ -21,3 +21,6 @@
     </tr>
   </tbody>
 </table>
+<% if current_user == @post_image.user %>
+<div><%= link_to "投稿削除", post_image_path(@post_image), method: :delete %></div>
+<%end%>
