@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %>さんのプロフィール</h1>
+<table>
+  <thead>
+    <tr>
+      <th>プロフィール画像</th>
+      <th>名前</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= image_tag user.get_profile_image %></td>
+      <td><%= user.name %></td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>投稿画像</th>
+      <th>店名</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @post_images.each do |post_images| %>
+      <tr>
+        <td><%= image_tag.post_images.get_post_images %></td>
+        <td><%= post_images.shop_name %></td>
+        <td><%= post_images.caption %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+
+
+
