@@ -8,8 +8,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= image_tag user.get_profile_image %></td>
-      <td><%= user.name %></td>
+      <td><%= image_tag @user.get_profile_image(100, 100) %></td>
+      <td><%= @user.name %></td>
     </tr>
   </tbody>
 </table>
@@ -22,11 +22,11 @@
     </tr>
   </thead>
   <tbody>
-    <%= @post_images.each do |post_images| %>
+    <%= @post_images.each do |post_image| %>
       <tr>
-        <td><%= image_tag.post_images.get_post_images %></td>
-        <td><%= post_images.shop_name %></td>
-        <td><%= post_images.caption %></td>
+        <td><%= image_tag post_image.get_image(200, 200) %></td>
+        <td><%= post_image.shop_name %></td>
+        <td><%= post_image.caption %></td>
       </tr>
     <%end%>
   </tbody>
