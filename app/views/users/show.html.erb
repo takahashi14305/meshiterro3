@@ -22,9 +22,13 @@
     </tr>
   </thead>
   <tbody>
-    <%= @post_images.each do |post_image| %>
+    <% @post_images.each do |post_image| %>
       <tr>
-        <td><%= image_tag post_image.get_image(200, 200) %></td>
+        <td>
+          <%= link_to post_image_path(post_image.id) do %>
+            <%= image_tag post_image.get_image(200, 200) %>
+          <%end%>
+        </td>
         <td><%= post_image.shop_name %></td>
         <td><%= post_image.caption %></td>
       </tr>

@@ -1,2 +1,5 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>プロフィール編集</h1>
+<% form_with model: @user do |f| %>
+  <label for="inputName">名前</label>
+  <%= f.text.field :name, autofocus: true, id: "inputName", placeholder: "名前" %>
+<%end%>
