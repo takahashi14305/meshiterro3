@@ -21,6 +21,19 @@
     </tr>
   </tbody>
 </table>
+
+<div>コメント<%= @post_image.post_comments.count %>件</div>
+<% @post_image.post_comments.each do |post_comment| %>
+  <%= post_comment.user.name %>
+  <%= post_comment.created_at.strftime('%y/%m/%d') %>
+  <%= post_comment.comment %>
+<%end%>
+
+<%= form_with model: [@post_image, @post_comment] do |f| %>
+  <%= f.text_area :comment, rows: '5', placeholder: "コメントを入力" %>
+  <%= f.submit "コメント送信" %>
+<%end%>
+
 <% if current_user == @post_image.user %>
 <div><%= link_to "投稿削除", post_image_path(@post_image), method: :delete %></div>
 <%end%>
