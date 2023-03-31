@@ -8,6 +8,7 @@
       <th>店名</th>
       <th>説明</th>
       <th>投稿日時</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,17 @@
       <td><%= @post_image.shop_name %></td>
       <td><%= @post_image.caption %></td>
       <td><%= @post_image.created_at.strftime('%y年%m月%d日') %></td>
+      <td>
+        <% if @post_image.favorited_by?(current_user) %>
+          <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
+            ❤️<%= @post_image.favorites.count %>いいね
+          <%end%>
+        <%else%>
+          <%= link_to post_image_favorites_path(@post_image), method: :post do %>
+            ♡<%= @post_image.favorites.count %>いいね
+          <%end%>
+        <%end%>
+      </td>
     </tr>
   </tbody>
 </table>
