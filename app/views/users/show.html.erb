@@ -14,30 +14,5 @@
   </tbody>
 </table>
 <%= link_to "プロフィール編集", edit_user_path(current_user) %>
-<table>
-  <thead>
-    <tr>
-      <th>投稿画像</th>
-      <th>店名</th>
-      <th>説明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @post_images.each do |post_image| %>
-      <tr>
-        <td>
-          <%= link_to post_image_path(post_image.id) do %>
-            <%= image_tag post_image.get_image(200, 200) %>
-          <%end%>
-        </td>
-        <td><%= post_image.shop_name %></td>
-        <td><%= post_image.caption %></td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
 
-
-
-
-
+<%= render 'post_images/list', post_images: @post_images %>
