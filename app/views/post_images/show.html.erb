@@ -25,7 +25,7 @@
 </table>
 
 <div>コメント<%= @post_image.post_comments.count %>件</div>
-<div id="comennt_area"><%= render 'post_comments/post_comment', post_image: @post_image %></div>
+<div id="comennt_area"><%= render 'post_comments/post_comment', post_image: @post_image, post_comment: @post_comment %></div>
 
 <% if current_user == @post_image.user %>
 <div><%= link_to "投稿削除", post_image_path(@post_image), method: :delete %></div>
