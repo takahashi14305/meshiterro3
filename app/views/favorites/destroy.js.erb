@@ -1,1 +1,1 @@
-$('#favorite_<%= @post_image %>').html("<%= j(render "favorites/favorite", locals: {post_image: @post_image}) %>");
+$('#favorite_<%= @post_image.id %>').html("<%= j(render "favorites/favorite", locals: {post_image: @post_image}) %>");
