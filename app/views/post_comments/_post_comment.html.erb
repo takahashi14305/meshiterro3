@@ -6,8 +6,3 @@
     <%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, remote: true %>
   <%end%>
 <%end%>
-
-<%= form_with model: [post_image, post_comment] do |f| %>
-  <%= f.text_area :comment, rows: '5', placeholder: "コメントを入力" %>
-  <%= f.submit "コメント送信" %>
-<%end%>
