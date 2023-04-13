@@ -1,2 +1,10 @@
 <h2>投稿編集</h2>
 <%= form_with model: @post_image do |f| %>
+  <div>画像</div>
+  <%= f.file_field %>
+  <div>ショップ名</div>
+  <%= f.text_field %>
+  <div>説明</div>
+  <%= f.text_area %>
+  <%= f.submit "編集完了"%>
+<%end%>
