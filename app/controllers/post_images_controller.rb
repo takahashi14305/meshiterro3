@@ -8,6 +8,7 @@ class PostImagesController < ApplicationController
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
     if @post_image.save
+      flash[:notice] = "投稿に成功しました!"
       redirect_to post_images_path
     else
       render :new
@@ -22,17 +23,17 @@ class PostImagesController < ApplicationController
     @post_image = PostImage.find(params[:id])
     @post_comment = PostComment.new
   end
-  
+
   def edit
     @post_image = PostImage.find(params[:id])
   end
-  
+
   def update
     @post_image = PostImage.find(params[:id])
     @post_image.update(post_image_params)
     redirect_to post_images_path
   end
-  
+
   def destroy
     @post_image = PostImage.find(params[:id])
     @post_image.destroy
