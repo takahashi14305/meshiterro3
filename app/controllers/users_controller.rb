@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    flash[:notice] = "マイページを編集しました。"
     redirect_to user_path(current_user)
   end
 
