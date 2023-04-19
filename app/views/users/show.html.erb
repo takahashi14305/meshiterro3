@@ -17,6 +17,7 @@
         </tbody>
       </table>
       <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn btn-secondary mt-3" %>
+      <div><%= flash[:notice] %></div>
     </div>
 
     <%= render 'post_images/list', post_images: @post_images %>
