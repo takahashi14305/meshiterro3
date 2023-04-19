@@ -31,7 +31,7 @@ class PostImagesController < ApplicationController
   def update
     @post_image = PostImage.find(params[:id])
     @post_image.update(post_image_params)
-    flash[:notice] = "投稿を編集しました"
+    flash[:notice] = "投稿を編集しました。"
     redirect_to post_images_path
   end
 
