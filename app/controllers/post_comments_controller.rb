@@ -11,7 +11,9 @@ class PostCommentsController < ApplicationController
   def destroy
     @post_image = PostImage.find(params[:post_image_id])
     PostComment.find(params[:id]).destroy
+    flash[:notice] = "コメントを削除しました。"
     #redirect_to post_image_path(params[:post_image_id])
+
   end
 
   private
