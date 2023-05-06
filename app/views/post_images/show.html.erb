@@ -13,8 +13,10 @@
   </thead>
   <tbody>
     <tr>
+      <%= link_to user_path(@post_image.user) do %>
       <td><%= @post_image.user.name %></td>
       <td><%= image_tag @post_image.user.get_profile_image(100,100) %></td>
+      <%end%>
       <td><%= image_tag @post_image.get_image(200,200) %></td>
       <td><%= @post_image.shop_name %></td>
       <td><%= @post_image.caption %></td>
