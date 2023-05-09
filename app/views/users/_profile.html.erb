@@ -21,6 +21,9 @@
       <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class:"btn btn-outline-success" %>
     <% end %>
   <% end %>
+
+  <%= user.followings.count %>
+
   <% if user == current_user %>
     <%= link_to "プロフィール編集", edit_user_path(current_user), class: "btn btn-secondary mt-3" %>
   <%end%>
