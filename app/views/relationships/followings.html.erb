@@ -1,2 +1,3 @@
 <%= render "users/profile", user: @user %>
 <h3>フォローユーザー</h3>
+<% @user.esch do |user| %>
