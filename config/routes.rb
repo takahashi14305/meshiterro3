@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'relationships/followings'
-  get 'relationships/followers'
   devise_for :users
   root to: 'homes#top'
   resources :post_images, only:[:new, :create, :index, :show, :destroy, :edit, :update] do

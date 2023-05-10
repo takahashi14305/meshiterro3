@@ -24,7 +24,7 @@
   <teble>
     <tr>
       <td>
-        Follow : <%= user.followings.count %>
+        <%= link_to "Follow : #{user.followings.count}", user_followings_path(user) %>
       </td>
     </tr>
     <tr>
