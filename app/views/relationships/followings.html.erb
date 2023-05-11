@@ -12,11 +12,14 @@
             <th>フォロー数</th>
             <th>フォロワー数</th>
           </tr>
+        
+          <tr>
+            <% @users.each do |user| %>
+              <%= user.name %>
+            <%end%>
+          </tr>
+        
         </table>
-
-        <% @users.each do |user| %>
-          <%= user.name %>
-        <%end%>
       </div>
     </div>
   </div>
