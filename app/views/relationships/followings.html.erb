@@ -1,12 +1,18 @@
 <div class="container-fluid">
   <div class="full-page">
     <div class="row">
-
-        <%= render "users/profile", user: @user %>
+      <%= render "users/profile", user: @user %>
 
       <div class="col-md-8">
+        <table>
+          <tr>
+            <th>ユーザー画像</th>
+            <th>ユーザー名</th>
+            <th>フォロー数</th>
+            <th>フォロワー数</th>
+          </tr>
+        </table>
         <h3>フォローユーザー</h3>
-
         <% @users.each do |user| %>
           <%= user.name %>
         <%end%>
